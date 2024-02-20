@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Message Dashboard</title>
+</head>
+<body>
+    <h1>Message Dashboard</h1>
+
+    <form method="post">
+        <label for="source">Source:</label>
+        <input type="text" id="source" name="source"><br><br>
+        <label for="message">Message:</label>
+        <input type="text" id="message" name="message"><br><br>
+        <input type="submit" value="Submit">
+    </form>
+
+    <h2>Summary</h2>
+    <p>Total Unique Sources: {{ summary['Total Unique Sources'] }}</p>
+    <p>Total Unique Messages: {{ summary['Total Unique Messages'] }}</p>
+    <p>Total Messages: {{ summary['Total Messages'] }}</p>
+
+    <h2>Detailed Report</h2>
+    <table border="1">
+        <tr>
+            <th>Sno</th>
+            <th>Source</th>
+            <th>Message</th>
+            <th>Time</th>
+        </tr>
+        {% for row in summary['Detailed Report'] %}
+        <tr>
+            <td>{{ row['Sno'] }}</td>
+            <td>{{ row['source'] }}</td>
+            <td>{{ row['message'] }}</td>
+            <td>{{ row['time'] }}</td>
+        </tr>
+        {% end-for %}
+    </table>
+</body>
+</html>

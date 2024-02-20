@@ -1,0 +1,4 @@
+---
+devices:
+  localhost:
+    type: linux

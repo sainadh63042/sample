@@ -1,0 +1,12 @@
+{
+    "DATABASE_CONFIG": {
+        "user": "root",
+        "password": "Sai@Nadh123",
+        "host": "localhost",
+        "database": "dashboard"
+    },
+    "IP_CONFIG": {
+            "ip":"0.0.0.0",
+            "port":5000
+    }
+}

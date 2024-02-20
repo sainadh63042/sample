@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>User Messages</title>
+</head>
+<body>
+    <h1>{{ username }}'s Messages</h1>
+
+    <table border="1">
+        <tr>
+            <th>id</th>
+            <th>Source</th>
+            <th>Message</th>
+            <th>Time</th>
+        </tr>
+        {% for message in user_messages %}
+        <tr>
+            <td>{{ message['id'] }}</td>
+            <td>{{ message['source'] }}</td>
+            <td>{{ message['message'] }}</td>
+            <td>{{ message['time'] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

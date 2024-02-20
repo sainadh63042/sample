@@ -1,0 +1,13 @@
+{
+    "DATABASE_CONFIG": {
+        "user": "root",
+        "password": "Sai@Nadh123",
+        "host":"172.17.0.2",
+        "port": 3306,
+        "database": "employees_info"
+    },
+    "IP_CONFIG": {
+            "ip":"172.17.0.2",
+            "port":5000
+    }
+}

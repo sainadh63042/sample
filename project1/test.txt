@@ -1,0 +1,32 @@
+# Use the official Python image as the base image
+FROM python:3.8
+
+# Set environment variables for Flask
+ENV FLASK_APP db_app.py
+ENV FLASK_RUN_HOST 0.0.0.0
+ENV FLASK_RUN_PORT 5000
+
+# Set the working directory in the container
+WORKDIR /app
+
+# Install dependencies for MySQL client
+RUN apt-get update && apt-get install -y default-mysql-client
+
+# Install Flask and mysql-connector-python
+RUN pip install Flask mysql-connector-python
+
+# Copy the db_app directory
+COPY db_app.py /app
+
+# Copy the database directory
+COPY database.py /app
+
+# Copy the config file
+COPY config.json /app
+
+# Expose the port the app runs on
+EXPOSE 5000
+
+# Command to run the Flask application
+CMD ["python", "database.py"]
+CMD ["flask", "run"]

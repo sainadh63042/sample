@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Database Dashboard</title>
+</head>
+<body>
+    <h1>Database Dashboard</h1>
+
+    <h2>Summary</h2>
+    <p>Total Unique Sources: {{ summary['Total Unique Sources'] }}</p>
+    <p>Total Unique Messages: {{ summary['Total Unique Messages'] }}</p>
+    <p>Total Messages: {{ summary['Total Messages'] }}</p>
+
+    <h2>Detailed Report</h2>
+    <table border="1">
+        <tr>
+            <th>Sno</th>
+            <th>Source</th>
+            <th>Message</th>
+            <th>Time</th>
+        </tr>
+        {% for message in detailed_report %}
+            <tr>
+                <td>{{ message['Sno'] }}</td>
+                <td>{{ message['Source'] }}</td>
+                <td>{{ message['Message'] }}</td>
+                <td>{{ message['Time'] }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
